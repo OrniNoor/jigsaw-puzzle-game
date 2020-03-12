@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jigsaw Puzzle</title>
+	<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+    <!--[if lt IE 9]><script type="text/javascript" src="js/bin/flashcanvas.js"></script><![endif]-->
+    <link rel="stylesheet" href="css/modal.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/buttons.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+ <div class="container-fluid" id="body-container" style="height:100%;">
+ <nav class="navbar navbar-default" id="main-nav">
+      <div class="container-fluid" id="nav-container">
+  
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img src="images/game-logo.png" id="logo" /></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="li-flex"><img src="images/home.png" class="li-img" /><div class="nav-cover"></div><div class="li-box-pts"><span class="pts">Home</span></div></li>
+      <li class="li-flex"><img src="images/parents.png" class="li-img" /><div class="nav-cover"></div><div class="li-box-pts"><span class="pts">Parents</span></div></li>
+      <li class="li-flex"><img src="images/pts.png" class="li-img" /><div class="nav-cover"></div><div class="li-box-pts"><span class="pts">28 pts</span></div></li>
+      <li class="li-flex"><img src="images/user.png" class="li-img" /><div class="nav-cover"></div><div class="li-box-pts"><span class="pts-user">Hi Maria!</span></div></li>
+    </ul>
+</div>
+</nav>
+ <div class="row" style="height:70%;">
+ <div class="col-sm-1 col-md-2 col-lg-2"></div>
+ <div class="col-sm-10 col-md-8 col-lg-8" id="game-container">
+ 
+  <div id="game-box">
+  <div id="titles">
+ <div class="float-lg-left" id="left" style="width:50%;">
+  
+  <span class="level-name">Level 2</span>
+   <span class="lesson-name">Lesson name</span>
+  <br/>
+  <div class="float-lg-left" id="rd">
+  <span class="read">Readings</span>
+  </div>
+ 
+  </div>
+   <div class="float-lg-right" style="width:50%;" id="title-right">
+  <span class="lesson-title">Title of the topic</span>
+  </div>
+  </div>
+  <img id="game-box-bg" src="images/game-overlay.png" />
+<img id="lesson-title" src="images/game-title.png" />
+<!-- JIGSAW CANVAS -->
+
+    <canvas id="canvas"></canvas>
+    <canvas class="hide" id="image"></canvas>
+    <canvas class="show" id="image-preview" style="opacity:0.8; -webkit-filter: grayscale(100%);filter: grayscale(100%);"></canvas>
+<div class="game-buttons">
+<b id="clock" class="button gbtn">00:00:00</b>
+<a id="easy" href="2x2.html" class="gbtn">Easy<br/><span class="glyphicon glyphicon-star"></span></a>
+<a id="medium" href="3x3.html" class="gbtn">Medium<br/><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></a>
+<a id="hard" href="4x4.html" class="gbtn">Hard<br/><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></a>
+</div>
+ </div>
+ <a class="back-btn" id="btn-back">Go Back</a>
+
+ </div>
+
+
+
+ <div class="col-sm-1 col-md-2 col-lg-2"></div>
+</div>
+  <div id="progress-div" class="col-sm-10 col-md-8 col-lg-8">
+  <div id="progress-bar">
+ <div id="progress-title"><span class="ptitle">45% lessons completed</span></div>
+ <div class="progress">
+  <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
+  aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:45%">
+    <img id="pro-rocket" src="images/rocket.png" />
+  </div>
+</div>
+ </div>
+ </div>
+  </div>
+<!-- GAME OPTIONS -->
+<div id="game-options">
+<ul>
+    <li class="hide"></li>
+    <li class="hide"><a href="#" id="SHOW_EDGE" class="button left" title="Show edge pieces only">Border</a></li>
+    <li class="hide"><a href="#" id="SHOW_MIDDLE" class="button middle" title="Show middle pieces only">Middle</a></li>
+    <li class="hide"><a href="#" id="SHOW_ALL" class="button right" title="Show all pieces">All</a></li>
+    <li class="hide"><a href="#" id="JIGSAW_SHUFFLE" class="button left" title="Shuffle">Shuffle</a></li>
+    <li class="hide"><a href="#" id="SHOW_PREVIEW" class="button middle" title="Preview">Preview</a></li>
+    <li class="hide"><a href="#" id="SHOW_HELP" class="button help right" title="Help">Help</a></li>
+	
+    
+
+    <li class="hide">
+        <div class="styled-select">
+            <select id="set-parts" selected-index="8">
+            </select>
+        </div>
+    </li>
+    <!-- Insert custom buttons here -->
+    <li style="display:none;" class="hide" id="create"><a href="#" class="hide" id="SHOW_FILEPICKER" title="Create puzzle" ></a></li>
+</ul>
+<br class="clear"/>
+</div>
+
+<!-- MODAL WINDOW -->
+<div class="hide" id="overlay"></div>
+<div id="modal-window" class="hide">
+    <div id="modal-window-msg"></div>
+    
+</div>
+
+<!-- CONGRATULATION -->
+<div id="myModal" class="hide">
+  <div class="modal-dialog" id="congrat">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h1>Congratulations!</h1>
+      </div>
+      <div class="modal-body">
+           <h2>You solved it in</h2>
+    <h3><span id="time"></span></h3>
+		<a href="2x2.html" onclick="redirect()" class="modal-btn btn-md">PLAY AGAIN</a>
+		 <a href="index.html" class="modal-btn">DONE</a>
+      </div>
+	  </div>
+	  </div>
+ </div>
+<!-- CREATE PUZZLE -->
+<div class="hide" id="create-puzzle">
+    <h1>Choose an image</h1>
+    <form id="image-form" id="add-image-form">
+        <input type="file" id="image-input">
+        <p id="image-error">that's not an image</p>
+        <p id="dnd"><i>Or drag one from your computer</i></p>
+    </form>
+</div>
+
+<!-- HELP -->
+<div id="help" class="hide">
+    <h2>How to play</h2>
+    <ul>
+        <li>Change the number of pieces with the selector on the top.<br/>
+       
+        </li>
+        
+        <li>Use left/right arrows, or right click to rotate a piece.</li>
+
+        <li>Toggle between edge or middle pieces:<br>
+        
+        </li>
+    </ul>
+    
+    <h3>Good luck.</h3>
+</div>
+
+<form class="hide" method="post" id="redirect-form">
+    <input type="text" name="time" id="t" />
+    <input type="text" name="parts" id="p" />
+</form>
+<iframe class="hide" src="about:blank" id="save-score" name="save-score"></iframe>
+<!-- SCRIPTS ROMPECABEZAS -->
+<script src="js/event-emiter.min.js"></script>
+<script src="js/canvas-event.min.js"></script>
+<script src="js/canvas-puzzle.min.js"></script>
+<script src="js/responsive.js"></script>
+
+</body>
+</html>

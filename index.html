@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>Jigsaw Puzzle</title>
+      <!--[if lt IE 9]><script type="text/javascript" src="js/bin/flashcanvas.js"></script><![endif]-->
+      <link rel="stylesheet" href="css/modal.css" type="text/css" charset="utf-8" />
+      <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+      <link rel="stylesheet" href="css/start.css" type="text/css" charset="utf-8" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+      <script src="js/start.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   </head>
+   <body>
+      <iframe src="silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+      <audio id="gamemusic" autoplay loop>
+         <source src="music.mp3" type="audio/mp3">
+      </audio>
+      <div class="main-container" >
+         <div class="cloud">
+            <div class="header">
+               <div class="header__bar">
+               </div>
+            </div>
+            <div class="x3 cloud__front">
+               <section class="containeer">
+                  <h1>
+                     <span class="title">JIGSAW</span>
+                     <span class="title">PUZZLE</span>
+                     <span class="title">Game</span>
+                  </h1>
+                  <div class="button"></div>
+               </section>
+               <div class="sbutton">
+			    <div class="list">
+			   <a href="2x2.php">EASY</a> <a href="3x3.php">MEDIUM</a> <a href="4x4.php">HARD</a>
+               </div> </div>
+            </div>
+            <div class="x2 cloud__back"></div>
+            <div class="snake"></div>
+            <div class="x1 cloud__main"></div>
+         </div>
+         <div>
+            <div class="light-stripes"></div>
+            <div class="space"></div>
+            <div class="stars"></div>
+            <div class="blue-shadow"></div>
+         </div>
+         <div class="ground">
+            <div class="first-part">
+               <div class="first-hill"></div>
+               <div class="first-trees"></div>
+               <div class="mountain"></div>
+            </div>
+            <div class="last-part">
+               <div class="last-hill">
+                  <div class="house">
+                     <div class="larg-bubble"></div>
+                     <div class="small-bubble"></div>
+                  </div>
+                  <div class="balloon"></div>
+               </div>
+               <div class="last-trees"></div>
+               <div class="yellow-lighting"></div>
+            </div>
+            <div class="grace"></div>
+         </div>
+      </div>
+   </body>
+</html>

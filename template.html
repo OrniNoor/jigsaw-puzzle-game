@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jigsaw Puzzle</title>
+	<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+    <!--[if lt IE 9]><script type="text/javascript" src="js/bin/flashcanvas.js"></script><![endif]-->
+    <link rel="stylesheet" href="css/modal.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="css/buttons.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+ 
+ <div class="container-fluid" id="body-container" style="height:100%;">
+
+ <div class="row" style="height:100%;">
+ <div class="col-sm-1 col-md-2 col-lg-2" style="height:100%;margin-top:2%;">
+  <div class="container-fluid" id="nav-container">
+ <nav id="nav" class="nav-primary hidden-xs nav-vertical">
+  <ul class="sidebar">
+	 <li class="navbar-header">
+      <a class="brand" href="#"><img src="images/game-logo.png" id="logo" /></a>
+    </li>
+      <li class="li-flex">
+
+	  <img src="images/home.png" class="li-img" />
+	 <a class="li-box-pts"><span class="pts">Home</span></a> 
+	
+	  </li>
+      <li class="li-flex"><img src="images/parents.png" class="li-img" />
+	  <a class="li-box-pts"><span class="pts">Parents</span></a></li>
+      <li class="li-flex"><img src="images/pts.png" class="li-img" />
+	  <a class="li-box-pts"><span class="pts">28 pts</span></a></li>
+      <li class="li-flex"><img src="images/user.png" class="li-img" />
+	  <mark class="li-box-pts">Hi Maria!</mark></li>
+      <li class="li-flex"><a class="back-btn" id="btn-back">Go Back</a></li>
+   </ul>
+
+</nav>
+ </div>
+ </div>
+ <div class="col-sm-10 col-md-8 col-lg-8" id="game-container">
+ 
+  <div id="game-box">
+  <div id="titles">
+  <div class="float-lg-left" id="left" style="width:50%;">
+  
+  <span class="level-name">Level 2</span><br/>
+  <div class="float-lg-left" id="rd">
+  <span class="read">Readings</span>
+  </div>
+  <div class="float-lg-right" id="lname">
+  <span class="lesson-name">Lesson name</span>
+  </div>
+  </div>
+   <div class="float-lg-right" style="width:50%;" id="title-right">
+  <span class="lesson-title">Title of the topic</span>
+  </div>
+  </div>
+  <img id="game-box-bg" src="images/game-overlay.png" />
+<img id="lesson-title" src="images/game-title.png" />
+ </div>
+
+ </div>
+
+
+
+ <div class="col-sm-1 col-md-2 col-lg-2" style="height: 100%;margin-top:5%;">
+   
+  <div id="progress-bar">
+ <div id="progress-title">45%</div>
+ <div class="progress-v vertical">
+  <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
+  aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:100%;height:45%">
+
+  </div>
+    <img id="pro-rocket" src="images/rocket.png" />
+</div>
+ </div>
+ </div>
+</div>
+  </div>
